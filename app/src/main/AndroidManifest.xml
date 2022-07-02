@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BookHubApp">
+
+        <activity
+            android:name=".ShowDetailActivity"
+            android:exported="false" />
         <activity
             android:name=".CartListActivity"
             android:exported="false" />

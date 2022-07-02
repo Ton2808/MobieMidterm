@@ -1,4 +1,4 @@
-package com.example.bookhubapp;
+package com.example.bookhubapp.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -8,7 +8,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.bookhubapp.R;
+
 public class MainActivity extends AppCompatActivity {
+    private ConstraintLayout startBin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
