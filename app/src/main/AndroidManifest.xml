@@ -10,7 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BookHubApp">
         <activity
-            android:name=".MainActivity"
+            android:name=".ShowDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.IntroActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

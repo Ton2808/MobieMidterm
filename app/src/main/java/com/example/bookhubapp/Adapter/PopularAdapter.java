@@ -1,5 +1,6 @@
 package com.example.bookhubapp.Adapter;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,79 +10,67 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
+import androidx.core.content.IntentCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.example.bookhubapp.Activity.ShowDetailActivity;
 import com.example.bookhubapp.Domain.FoodDomain;
 import com.example.bookhubapp.R;
 
+import java.time.Instant;
 import java.util.ArrayList;
 
 public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHolder> {
-    ArrayList<FoodDomain> categoryDomains;
+        ArrayList<FoodDomain> popularFood;
 
     public PopularAdapter(ArrayList<FoodDomain> categoryDomains){
-        this.categoryDomains = categoryDomains;
+        this.popularFood = categoryDomains;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_category, parent, false)
+        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_popular, parent, false);
         return new ViewHolder(inflate);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.categoryName.setText(categoryDomains.get(position).getTitle());
-        String picUrl = "";
-        switch (position){
-            case 0:{
-                picUrl = "cat_1";
-                holder.mainLayout.setBackground(ContextCompat.getDrawable(holder.itemView.getContext(), R.drawable.cat_background1));
-                break;
-            },
-            case 1:{
-                picUrl = "cat_2";
-                holder.mainLayout.setBackground(ContextCompat.getDrawable(holder.itemView.getContext(), R.drawable.cat_background2));
-                break;
-            },
-            case 2:{
-                picUrl = "cat_3";
-                holder.mainLayout.setBackground(ContextCompat.getDrawable(holder.itemView.getContext(), R.drawable.cat_background3));
-                break;
-            },
-            case 3:{
-                picUrl = "cat_4";
-                holder.mainLayout.setBackground(ContextCompat.getDrawable(holder.itemView.getContext(), R.drawable.cat_background4));
-                break;
-            },
-            case 4:{
-                picUrl = "cat_5";
-                holder.mainLayout.setBackground(ContextCompat.getDrawable(holder.itemView.getContext(), R.drawable.cat_background5));
-                break;
-            }
-            int drawableResourceId = holder.itemView.getContext().getResources().getIdentifier(picUrl, "drawable", holder.itemView.getContext().getPackageName());
+        holder.title.setText(popularFood.get(position).getTitle());
+        holder.fee.setText(String.valueOf(popularFood.get(position).getFee()));
 
-            Glide.with(holder.itemView.getContext())
-                    .load(drawableResourceId)
-                    .into(holder.categoryPic);
-        }
+        int drawableResourceId = holder.itemView.getContext().getResources().getIdentifier(popularFood.get(position).getPic(), "drawable", holder.itemView.getContext().getPackageName());
+
+        Glide.with(holder.itemView.getContext())
+                .load(drawableResourceId)
+                .into(holder.pic);
+
+        holder.addBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(holder.itemView.getContext(), ShowDetailActivity.class);
+                intent.putExtra("object", popularFood.get(position));
+                holder.itemView.getContext().startActivities(intent);
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return popularFood.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        TextView categoryName;
-        ImageView categoryPic;
-        ConstraintLayout mainLayout;
+        TextView title, fee;
+        ImageView pic;
+        TextView addBtn;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            categoryName = itemView.findViewById(R.id.categoryName);
-            categoryPic = itemView.findViewById(R.id.categoryPic);
-            mainLayout = itemView.findViewById(R.id.mainLayout)
+            title = itemView.findViewById(R.id.title);
+            fee = itemView.findViewById(R.id.fee);
+            pic = itemView.findViewById(R.id.pic);
+            addBtn = itemView.findViewById(R.id.addBtn);
         }
     }
 }
