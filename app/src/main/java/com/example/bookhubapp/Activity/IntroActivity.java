@@ -59,6 +59,6 @@ public class IntroActivity extends AppCompatActivity {
         foodList.add(new FoodDomain("Tuan-An To", "book", "Dep trai hoc gioi", 9.76));
 
         adapter2 = new PopularAdapter(foodList);
-        recyclerViewCategoryList.setAdapter(adapter2);
+        recyclerViewPolularList.setAdapter(adapter2);
     }
 }
