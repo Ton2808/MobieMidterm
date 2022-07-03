@@ -7,15 +7,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 
 import com.example.bookhubapp.Adapter.CategoryAdapter;
 import com.example.bookhubapp.Adapter.PopularAdapter;
 import com.example.bookhubapp.Domain.CategoryDomain;
 import com.example.bookhubapp.Domain.FoodDomain;
 import com.example.bookhubapp.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -23,16 +22,23 @@ public class IntroActivity extends AppCompatActivity {
     private RecyclerView.Adapter adapter, adapter2;
     private RecyclerView recyclerViewCategoryList, recyclerViewPopularList;
     private ImageView map;
-
+    private FloatingActionButton cart;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro);
         map = findViewById(R.id.imagemap);
+        cart = findViewById(R.id.cart);
 
         recyclerViewCategory();
         recyclerViewPopular();
 
+        cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(v.getContext() , CartListActivity.class));
+            }
+        });
         map.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,7 +49,7 @@ public class IntroActivity extends AppCompatActivity {
 
     private void recyclerViewCategory() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        recyclerViewCategoryList = findViewById(R.id.recyclerView);
+        recyclerViewCategoryList = findViewById(R.id.recyclerView3);
         recyclerViewCategoryList.setLayoutManager(linearLayoutManager);
 
         ArrayList<CategoryDomain> category = new ArrayList<>();

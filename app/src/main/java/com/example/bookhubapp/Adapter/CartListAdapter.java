@@ -1,6 +1,7 @@
 package com.example.bookhubapp.Adapter;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,9 +25,9 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHo
     private ManagementCart managementCart;
     private ChangeNumberItemsListener changeNumberItemsListener;
 
-    public CartListAdapter(ArrayList<FoodDomain> foodDomains, ManagementCart managementCart, ChangeNumberItemsListener changeNumberItemsListener){
+    public CartListAdapter(ArrayList<FoodDomain> foodDomains, Context context, ChangeNumberItemsListener changeNumberItemsListener){
         this.foodDomains = foodDomains;
-        this.managementCart = managementCart;
+        this.managementCart = new ManagementCart(context);
         this.changeNumberItemsListener = changeNumberItemsListener;
     }
 
