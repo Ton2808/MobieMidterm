@@ -90,6 +90,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
             categoryName = itemView.findViewById(R.id.categoryName);
             categoryPic = itemView.findViewById(R.id.categoryPic);
             mainLayout = itemView.findViewById(R.id.mainLayout);
+            int x = 1;
         }
     }
 }
