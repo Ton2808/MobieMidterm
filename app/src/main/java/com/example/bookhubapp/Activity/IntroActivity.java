@@ -39,6 +39,7 @@ public class IntroActivity extends AppCompatActivity {
                 startActivity(new Intent(v.getContext() , CartListActivity.class));
             }
         });
+
         map.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,7 +50,7 @@ public class IntroActivity extends AppCompatActivity {
 
     private void recyclerViewCategory() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        recyclerViewCategoryList = findViewById(R.id.recyclerView3);
+        recyclerViewCategoryList = findViewById(R.id.CardList);
         recyclerViewCategoryList.setLayoutManager(linearLayoutManager);
 
         ArrayList<CategoryDomain> category = new ArrayList<>();

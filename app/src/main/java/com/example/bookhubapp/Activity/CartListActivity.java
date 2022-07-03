@@ -4,10 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -15,7 +13,6 @@ import com.example.bookhubapp.Adapter.CartListAdapter;
 import com.example.bookhubapp.Helper.ManagementCart;
 import com.example.bookhubapp.Interface.ChangeNumberItemsListener;
 import com.example.bookhubapp.R;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class CartListActivity extends AppCompatActivity {
 private RecyclerView.Adapter adapter;
@@ -57,7 +54,7 @@ private ScrollView scrollView;
     }*/
 
     private void initView() {
-        recyclerViewList = findViewById(R.id.recyclerView3);
+        recyclerViewList = findViewById(R.id.CardList);
         totalFeeTxt = findViewById(R.id.totalFeeTxt);
         taxTxt = findViewById(R.id.totalTaxTxt);
         deliveryTxt = findViewById(R.id.totalDeliveryTxt);

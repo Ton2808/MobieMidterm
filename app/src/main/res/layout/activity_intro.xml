@@ -46,8 +46,8 @@
                     android:textColor="#000000"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="@+id/recyclerView3"
-                    app:layout_constraintTop_toBottomOf="@+id/recyclerView3" />
+                    app:layout_constraintStart_toStartOf="@+id/CardList"
+                    app:layout_constraintTop_toBottomOf="@+id/CardList" />
 
                 <EditText
                     android:id="@+id/editTextTextPersonName4"
@@ -128,7 +128,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/hehe" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerView3"
+                    android:id="@+id/CardList"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="22dp"
