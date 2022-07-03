@@ -35,7 +35,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(stores.get(order), 15));
 
-        Button nextBtn = findViewById(R.id.button2);
+        Button nextBtn = findViewById(R.id.nextBtn);
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
