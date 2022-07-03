@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">BookHubApp</string>
+    <string name="map_api_key">AIzaSyA8odMRKX5t7DoJgxovXDVSD1jCMfAu1pQ</string>
 </resources>

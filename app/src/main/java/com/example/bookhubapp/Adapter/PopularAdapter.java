@@ -2,6 +2,7 @@ package com.example.bookhubapp.Adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,8 +23,8 @@ import java.util.ArrayList;
 public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHolder> {
     ArrayList<FoodDomain> popularFood;
 
-    public PopularAdapter(ArrayList<FoodDomain> categoryDomains){
-        this.popularFood = categoryDomains;
+    public PopularAdapter(ArrayList<FoodDomain> foodDomains){
+        this.popularFood = foodDomains;
     }
 
     @Override
@@ -33,7 +34,7 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PopularAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
+    public void onBindViewHolder(@NonNull PopularAdapter.ViewHolder holder,int position) {
         holder.title.setText(popularFood.get(position).getTitle());
         holder.fee.setText(String.valueOf(popularFood.get(position).getFee()));
 
@@ -47,7 +48,7 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(holder.itemView.getContext(), ShowDetailActivity.class);
-                intent.putExtra("object", popularFood.get(position));
+                intent.putExtra("object",popularFood.get(holder.getAdapterPosition()));
                 holder.itemView.getContext().startActivity(intent);
             }
         });

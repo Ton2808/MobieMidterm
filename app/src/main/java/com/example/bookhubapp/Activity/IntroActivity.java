@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.example.bookhubapp.Adapter.CategoryAdapter;
@@ -20,16 +21,24 @@ import java.util.ArrayList;
 
 public class IntroActivity extends AppCompatActivity {
     private RecyclerView.Adapter adapter, adapter2;
-    private RecyclerView recyclerViewCategoryList, recyclerViewPolularList;
-
+    private RecyclerView recyclerViewCategoryList, recyclerViewPopularList;
+    private ImageView map;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro);
+        map = findViewById(R.id.imagemap);
 
         recyclerViewCategory();
         recyclerViewPopular();
+
+        map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(v.getContext() , MapActivity.class));
+            }
+        });
     }
 
     private void recyclerViewCategory() {
@@ -50,8 +59,8 @@ public class IntroActivity extends AppCompatActivity {
 
     private void recyclerViewPopular(){
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        recyclerViewPolularList = findViewById(R.id.recyclerView2);
-        recyclerViewPolularList.setLayoutManager(linearLayoutManager);
+        recyclerViewPopularList = findViewById(R.id.recyclerView2);
+        recyclerViewPopularList.setLayoutManager(linearLayoutManager);
 
         ArrayList<FoodDomain> foodList = new ArrayList<>();
         foodList.add(new FoodDomain("Adventures of Finn", "adventures_finn", "The novel's preeminence derives from its wonderfully imaginative re-creation of boyhood adventures along the Mississippi River, its inspired characterization, the author's remarkable ear for dialogue, and the book's understated development of serious underlying themes: \"natural\" man versus \"civilized\" society, the evils of slavery, the innate value and dignity of human beings, and other topics. Most of all, Huckleberry Finn is a wonderful story, filled with high adventure and unforgettable characters.", 8.76));
@@ -59,6 +68,6 @@ public class IntroActivity extends AppCompatActivity {
         foodList.add(new FoodDomain("The Great Gatsby", "great_gatsby", "The only authorized edition of the twentieth-century classic, featuring F. Scott Fitzgerald’s final revisions, a foreword by his granddaughter, and a new introduction by National Book Award winner Jesmyn Ward.", 9.76));
 
         adapter2 = new PopularAdapter(foodList);
-        recyclerViewPolularList.setAdapter(adapter2);
+        recyclerViewPopularList.setAdapter(adapter2);
     }
 }

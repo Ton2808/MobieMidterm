@@ -78,6 +78,6 @@ public class ShowDetailActivity extends AppCompatActivity {
         numberOrderTxt = findViewById(R.id.numberOrderTxt);
         plusBtn = findViewById(R.id.plusBtn);
         minusBtn = findViewById(R.id.minusBtn);
-        picFood = findViewById(R.id.picFood);
+        picFood = findViewById(R.id.pic);
     }
 }

@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.bookhubapp">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,11 +10,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BookHubApp">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/map_api_key" />
+        <activity
+            android:name=".Activity.ShowDetailActivity"
+            android:exported="false"/>
         <activity
             android:name=".Activity.CartListActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity.ShowDetailActivity"
+            android:name=".Activity.MapActivity"
             android:exported="false"/>
         <activity
             android:name=".Activity.IntroActivity"
