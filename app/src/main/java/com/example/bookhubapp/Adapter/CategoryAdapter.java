@@ -1,5 +1,6 @@
 package com.example.bookhubapp.Adapter;
 
+import android.content.Intent;
 import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,9 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.bookhubapp.Activity.MapActivity;
+import com.example.bookhubapp.Activity.ShowCategoryActivity;
+import com.example.bookhubapp.Activity.ShowDetailActivity;
 import com.example.bookhubapp.Domain.CategoryDomain;
 import com.example.bookhubapp.R;
 
@@ -64,13 +68,19 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
                 break;
             }
 
-
         }
         int drawableResourceId = holder.itemView.getContext().getResources().getIdentifier(picUrl, "drawable", holder.itemView.getContext().getPackageName());
         Glide.with(holder.itemView.getContext())
                 .load(drawableResourceId)
                 .into(holder.categoryPic);
 
+        holder.categoryPic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(holder.itemView.getContext(), ShowCategoryActivity.class);
+                holder.itemView.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override
