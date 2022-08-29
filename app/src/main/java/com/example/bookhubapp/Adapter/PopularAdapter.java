@@ -18,10 +18,10 @@ import com.example.bookhubapp.R;
 import java.util.ArrayList;
 
 public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHolder> {
-    ArrayList<BookDomain> popularFood;
+    ArrayList<BookDomain> popularBook;
 
     public PopularAdapter(ArrayList<BookDomain> bookDomains){
-        this.popularFood = bookDomains;
+        this.popularBook = bookDomains;
     }
 
     @Override
@@ -32,10 +32,10 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull PopularAdapter.ViewHolder holder,int position) {
-        holder.title.setText(popularFood.get(position).getTitle());
-        holder.fee.setText(String.valueOf(popularFood.get(position).getFee()));
+        holder.title.setText(popularBook.get(position).getTitle());
+        holder.fee.setText(String.valueOf(popularBook.get(position).getFee()));
 
-        int drawableResourceId = holder.itemView.getContext().getResources().getIdentifier(popularFood.get(position).getPic(), "drawable", holder.itemView.getContext().getPackageName());
+        int drawableResourceId = holder.itemView.getContext().getResources().getIdentifier(popularBook.get(position).getPic(), "drawable", holder.itemView.getContext().getPackageName());
 
         Glide.with(holder.itemView.getContext())
                 .load(drawableResourceId)
@@ -45,7 +45,7 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(holder.itemView.getContext(), ShowDetailActivity.class);
-                intent.putExtra("object",popularFood.get(holder.getAdapterPosition()));
+                intent.putExtra("object",popularBook.get(holder.getAdapterPosition()));
                 holder.itemView.getContext().startActivity(intent);
             }
         });
@@ -53,7 +53,7 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
 
     @Override
     public int getItemCount() {
-        return popularFood.size();
+        return popularBook.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
