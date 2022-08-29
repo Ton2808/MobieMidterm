@@ -1,8 +1,6 @@
 package com.example.bookhubapp.Adapter;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,21 +8,20 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.bookhubapp.Activity.ShowDetailActivity;
-import com.example.bookhubapp.Domain.FoodDomain;
+import com.example.bookhubapp.Domain.BookDomain;
 import com.example.bookhubapp.R;
 
 import java.util.ArrayList;
 
 public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHolder> {
-    ArrayList<FoodDomain> popularFood;
+    ArrayList<BookDomain> popularFood;
 
-    public PopularAdapter(ArrayList<FoodDomain> foodDomains){
-        this.popularFood = foodDomains;
+    public PopularAdapter(ArrayList<BookDomain> bookDomains){
+        this.popularFood = bookDomains;
     }
 
     @Override

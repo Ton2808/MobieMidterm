@@ -15,11 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.bookhubapp.Domain.CategoryDomain;
-import com.example.bookhubapp.Domain.FoodDomain;
 import com.example.bookhubapp.R;
 
-import java.time.Instant;
-import java.time.temporal.TemporalAdjuster;
 import java.util.ArrayList;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHolder> {

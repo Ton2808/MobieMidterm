@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.bookhubapp.Domain.FoodDomain;
+import com.example.bookhubapp.Domain.BookDomain;
 import com.example.bookhubapp.Helper.ManagementCart;
 import com.example.bookhubapp.R;
 
@@ -16,7 +16,7 @@ public class ShowDetailActivity extends AppCompatActivity {
     private TextView addToCartBtn;
     private TextView titleTxt, feeTxt, descriptionTxt, numberOrderTxt;
     private ImageView plusBtn, minusBtn, picFood;
-    private FoodDomain object;
+    private BookDomain object;
     int numberOrder = 1;
     private ManagementCart managementCart;
 
@@ -31,7 +31,7 @@ public class ShowDetailActivity extends AppCompatActivity {
     }
 
     private void getBundle(){
-        object = (FoodDomain) getIntent().getSerializableExtra("object");
+        object = (BookDomain) getIntent().getSerializableExtra("object");
 
         int drawableResourceId = this.getResources().getIdentifier(object.getPic(), "drawable", this.getPackageName());
         Glide.with(this)
@@ -39,7 +39,7 @@ public class ShowDetailActivity extends AppCompatActivity {
                 .into(picFood);
 
         titleTxt.setText(object.getTitle());
-        feeTxt.setText("$"+object.getFee());
+        feeTxt.setText(object.getFee() + "đ");
         descriptionTxt.setText(object.getDescription());
         numberOrderTxt.setText(String.valueOf(numberOrder));
 

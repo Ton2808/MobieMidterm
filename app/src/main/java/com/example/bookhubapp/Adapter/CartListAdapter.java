@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.bookhubapp.Domain.FoodDomain;
+import com.example.bookhubapp.Domain.BookDomain;
 import com.example.bookhubapp.Helper.ManagementCart;
 import com.example.bookhubapp.Interface.ChangeNumberItemsListener;
 import com.example.bookhubapp.R;
@@ -21,12 +21,12 @@ import java.util.ArrayList;
 
 
 public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHolder>{
-    private ArrayList<FoodDomain> foodDomains;
+    private ArrayList<BookDomain> bookDomains;
     private ManagementCart managementCart;
     private ChangeNumberItemsListener changeNumberItemsListener;
 
-    public CartListAdapter(ArrayList<FoodDomain> foodDomains, Context context, ChangeNumberItemsListener changeNumberItemsListener){
-        this.foodDomains = foodDomains;
+    public CartListAdapter(ArrayList<BookDomain> bookDomains, Context context, ChangeNumberItemsListener changeNumberItemsListener){
+        this.bookDomains = bookDomains;
         this.managementCart = new ManagementCart(context);
         this.changeNumberItemsListener = changeNumberItemsListener;
     }
@@ -41,12 +41,12 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        holder.title.setText(foodDomains.get(position).getTitle());
-        holder.feeEachItem.setText((String.valueOf(foodDomains.get(position).getFee())));
-        holder.totalEachItem.setText(String.valueOf(Math.round((foodDomains.get(position).getNumberInCart() * foodDomains.get(position).getFee()) * 100 ) / 100));
-        holder.num.setText(String.valueOf(foodDomains.get(position).getNumberInCart()));
+        holder.title.setText(bookDomains.get(position).getTitle());
+        holder.feeEachItem.setText((String.valueOf(bookDomains.get(position).getFee())));
+        holder.totalEachItem.setText(String.valueOf(bookDomains.get(position).getNumberInCart() * bookDomains.get(position).getFee()));
+        holder.num.setText(String.valueOf(bookDomains.get(position).getNumberInCart()));
 
-        int drawableResourceId = holder.itemView.getContext().getResources().getIdentifier(foodDomains.get(position).getPic(),
+        int drawableResourceId = holder.itemView.getContext().getResources().getIdentifier(bookDomains.get(position).getPic(),
                 "drawable",holder.itemView.getContext().getPackageName());
 
         Glide.with(holder.itemView.getContext()).load(drawableResourceId).into(holder.pic);
@@ -54,7 +54,7 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHo
         holder.plusItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                managementCart.plusNumberFood(foodDomains, position, new ChangeNumberItemsListener() {
+                managementCart.plusNumberFood(bookDomains, position, new ChangeNumberItemsListener() {
                     @Override
                     public void changed() {
                         notifyDataSetChanged();
@@ -67,7 +67,7 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHo
         holder.minusItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                managementCart.minusNumberFood(foodDomains, position, new ChangeNumberItemsListener() {
+                managementCart.minusNumberFood(bookDomains, position, new ChangeNumberItemsListener() {
                     @Override
                     public void changed() {
                         notifyDataSetChanged();
@@ -81,7 +81,7 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHo
 
     @Override
     public int getItemCount() {
-        return foodDomains.size();
+        return bookDomains.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{

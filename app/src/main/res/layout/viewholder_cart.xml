@@ -22,19 +22,18 @@
         android:id="@+id/titleTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="title"
         android:textColor="#373b54"
-        android:textSize="24dp"
-        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textStyle="normal"
         app:layout_constraintStart_toEndOf="@+id/picCart"
         app:layout_constraintTop_toTopOf="@+id/picCart" />
 
     <ImageView
         android:id="@+id/plusbutton"
-        android:layout_width="57dp"
-        android:layout_height="46dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="59dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="@+id/picCart"
         app:layout_constraintStart_toStartOf="@+id/titleTxt"
         app:srcCompat="@drawable/s4_plus" />
@@ -42,7 +41,7 @@
     <ImageView
         android:id="@+id/minusbutton"
         android:layout_width="59dp"
-        android:layout_height="46dp"
+        android:layout_height="30dp"
         android:layout_marginEnd="116dp"
         app:layout_constraintBottom_toBottomOf="@+id/plusbutton"
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,22 +53,23 @@
         android:id="@+id/numberItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
         android:text="1"
-        android:textSize="24dp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/minusbutton"
         app:layout_constraintEnd_toStartOf="@+id/minusbutton"
-        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintHorizontal_bias="0.733"
         app:layout_constraintStart_toEndOf="@+id/plusbutton"
         app:layout_constraintTop_toBottomOf="@+id/titleTxt"
-        app:layout_constraintVertical_bias="0.822" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/FeeEachItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="36dp"
         android:text="0"
-        android:textSize="20dp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/titleTxt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/titleTxt"
@@ -79,11 +79,11 @@
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="4dp"
-        android:text="$"
-        android:textSize="20dp"
+        android:layout_marginStart="2dp"
+        android:text="đ"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/titleTxt"
-        app:layout_constraintEnd_toStartOf="@+id/FeeEachItem"
+        app:layout_constraintStart_toEndOf="@+id/FeeEachItem"
         app:layout_constraintTop_toTopOf="@+id/titleTxt"
         app:layout_constraintVertical_bias="1.0" />
 
@@ -91,9 +91,9 @@
         android:id="@+id/TotalEachItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="36dp"
         android:text="0"
-        android:textSize="24dp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/numberItem"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/numberItem"
@@ -103,11 +103,12 @@
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="4dp"
-        android:text="$"
-        android:textSize="24dp"
+        android:layout_marginStart="2dp"
+        android:text="đ"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/numberItem"
-        app:layout_constraintEnd_toStartOf="@+id/TotalEachItem"
+        app:layout_constraintStart_toEndOf="@+id/TotalEachItem"
         app:layout_constraintTop_toTopOf="@+id/numberItem"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
