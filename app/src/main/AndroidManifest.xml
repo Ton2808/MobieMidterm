@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BookHubApp">
         <activity
-            android:name=".ShowCategoryActivity"
+            android:name=".Activity.ShowCategoryActivity"
             android:exported="false" />
 
         <uses-library
