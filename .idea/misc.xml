@@ -9,6 +9,8 @@
         <entry key="..\:/CHAU/Term6-2022/MobileMidterm/app/src/main/res/drawable/cat_background3.xml" value="0.2175" />
         <entry key="..\:/CHAU/Term6-2022/MobileMidterm/app/src/main/res/drawable/cat_background4.xml" value="0.2175" />
         <entry key="..\:/CHAU/Term6-2022/MobileMidterm/app/src/main/res/drawable/cat_background5.xml" value="0.2175" />
+        <entry key="..\:/CHAU/Term6-2022/MobileMidterm/app/src/main/res/drawable/my_button_bg.xml" value="0.2225" />
+        <entry key="..\:/CHAU/Term6-2022/MobileMidterm/app/src/main/res/drawable/my_gradient_bg.xml" value="0.2225" />
         <entry key="..\:/CHAU/Term6-2022/MobileMidterm/app/src/main/res/drawable/s3_checkout_new.xml" value="0.2175" />
         <entry key="..\:/CHAU/Term6-2022/MobileMidterm/app/src/main/res/drawable/search.xml" value="0.2175" />
         <entry key="..\:/CHAU/Term6-2022/MobileMidterm/app/src/main/res/layout/activity_cart_list.xml" value="0.2" />
@@ -16,10 +18,15 @@
         <entry key="..\:/CHAU/Term6-2022/MobileMidterm/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/CHAU/Term6-2022/MobileMidterm/app/src/main/res/layout/activity_map.xml" value="0.25" />
         <entry key="..\:/CHAU/Term6-2022/MobileMidterm/app/src/main/res/layout/activity_show_category.xml" value="0.264" />
+        <entry key="..\:/CHAU/Term6-2022/MobileMidterm/app/src/main/res/layout/activity_show_category_detail.xml" value="0.25" />
+        <entry key="..\:/CHAU/Term6-2022/MobileMidterm/app/src/main/res/layout/activity_show_category_list.xml" value="0.25" />
         <entry key="..\:/CHAU/Term6-2022/MobileMidterm/app/src/main/res/layout/activity_show_detail.xml" value="0.264" />
+        <entry key="..\:/CHAU/Term6-2022/MobileMidterm/app/src/main/res/layout/card_book.xml" value="0.24895833333333334" />
+        <entry key="..\:/CHAU/Term6-2022/MobileMidterm/app/src/main/res/layout/fragment_book_category.xml" value="0.24895833333333334" />
         <entry key="..\:/CHAU/Term6-2022/MobileMidterm/app/src/main/res/layout/viewholder_cart.xml" value="0.234375" />
+        <entry key="..\:/CHAU/Term6-2022/MobileMidterm/app/src/main/res/layout/viewholder_cart_category.xml" value="0.536" />
         <entry key="..\:/CHAU/Term6-2022/MobileMidterm/app/src/main/res/layout/viewholder_category.xml" value="0.25" />
-        <entry key="..\:/CHAU/Term6-2022/MobileMidterm/app/src/main/res/layout/viewholder_popular.xml" value="0.25" />
+        <entry key="..\:/CHAU/Term6-2022/MobileMidterm/app/src/main/res/layout/viewholder_popular.xml" value="0.2" />
         <entry key="..\:/Users/Admin/MobieMidterm/app/src/main/res/drawable/cart_background.xml" value="0.1" />
         <entry key="..\:/Users/Admin/MobieMidterm/app/src/main/res/drawable/cat_background1.xml" value="0.1" />
         <entry key="..\:/Users/Admin/MobieMidterm/app/src/main/res/layout/activity_cart_list.xml" value="0.2" />

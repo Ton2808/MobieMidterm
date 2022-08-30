@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="180dp"
-        android:text="Hãy tận hưởng kho tàng kiến thức này\nVì bạn xứng đáng"
+        android:text="Hãy tận hưởng kho tàng tri thức này\nVì bạn xứng đáng"
         android:textColor="#0583F2"
         android:textSize="20sp"
         android:textStyle="bold|italic"
@@ -40,7 +40,9 @@
         android:layout_marginStart="36dp"
         android:layout_marginEnd="36dp"
         android:layout_marginBottom="50dp"
+        android:backgroundTint="#0B85E6"
         android:text="Khám phá thế giới sách"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

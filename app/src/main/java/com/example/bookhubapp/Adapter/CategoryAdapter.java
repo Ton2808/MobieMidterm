@@ -74,10 +74,11 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
                 .load(drawableResourceId)
                 .into(holder.categoryPic);
 
-        holder.categoryPic.setOnClickListener(new View.OnClickListener() {
+        holder.mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(holder.itemView.getContext(), ShowCategoryActivity.class);
+                intent.putExtra("Category Name", categoryDomains.get(position).getTitle());
                 holder.itemView.getContext().startActivity(intent);
             }
         });

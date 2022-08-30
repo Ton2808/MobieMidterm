@@ -23,13 +23,14 @@
             <TextView
                 android:id="@+id/category_name"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:layout_margin="16dp"
-                android:background="@drawable/cat_background3"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
                 android:gravity="center"
-                android:text="Ngôn tình"
-                android:textSize="24sp" />
+                android:text="TextView"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/category_recycler"
