@@ -48,6 +48,7 @@
         android:layout_width="74dp"
         android:layout_height="27dp"
         android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
         android:background="@drawable/s3_checkout_new"
         android:paddingStart="18dp"
         android:paddingTop="3dp"
