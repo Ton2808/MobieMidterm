@@ -33,7 +33,7 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull PopularAdapter.ViewHolder holder,int position) {
         holder.title.setText(popularBook.get(position).getTitle());
-        holder.fee.setText(String.valueOf(popularBook.get(position).getFee()));
+        holder.fee.setText(String.valueOf(popularBook.get(position).getFee().intValue()/1000) + ",000");
 
         int drawableResourceId = holder.itemView.getContext().getResources().getIdentifier(popularBook.get(position).getPic(), "drawable", holder.itemView.getContext().getPackageName());
 
