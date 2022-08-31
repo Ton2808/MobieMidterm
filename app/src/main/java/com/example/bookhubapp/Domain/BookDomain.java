@@ -7,6 +7,7 @@ public class BookDomain implements Serializable {
     private String pic;
     private String description;
     private Double fee;
+    private String category;
     private int numberInCart;
 
     public BookDomain(String title, String pic, String description, Double fee) {
@@ -14,6 +15,14 @@ public class BookDomain implements Serializable {
         this.pic = pic;
         this.description = description;
         this.fee = fee;
+    }
+
+    public BookDomain(String title, String pic, String description, Double fee, String category) {
+        this.title = title;
+        this.pic = pic;
+        this.description = description;
+        this.fee = fee;
+        this.category = category;
     }
 
     public BookDomain(String title, String pic, String description, Double fee, int numberInCart) {
@@ -54,6 +63,14 @@ public class BookDomain implements Serializable {
 
     public void setFee(Double fee) {
         this.fee = fee;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public int getNumberInCart() {

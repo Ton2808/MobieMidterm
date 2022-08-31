@@ -55,6 +55,7 @@ public class IntroActivity extends AppCompatActivity {
         recyclerViewCategoryList.setLayoutManager(linearLayoutManager);
 
         ArrayList<CategoryDomain> category = new ArrayList<>();
+        category.add(new CategoryDomain("Tiểu thuyết", "novel"));
         category.add(new CategoryDomain("Ngôn tình", "hearts"));
         category.add(new CategoryDomain("Trinh thám", "clue"));
         category.add(new CategoryDomain("Kinh dị", "zombie"));
