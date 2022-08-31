@@ -39,7 +39,7 @@ public class ShowDetailActivity extends AppCompatActivity {
                 .into(picFood);
 
         titleTxt.setText(object.getTitle());
-        feeTxt.setText(object.getFee() + "đ");
+        feeTxt.setText(object.getFee().intValue()/1000 + ",000đ");
         descriptionTxt.setText(object.getDescription());
         numberOrderTxt.setText(String.valueOf(numberOrder));
 

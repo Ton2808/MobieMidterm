@@ -67,7 +67,7 @@ private ScrollView scrollView;
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,
                 LinearLayoutManager.VERTICAL,false);
         recyclerViewList.setLayoutManager(linearLayoutManager);
-        adapter= new CartListAdapter(managementCart.getListCart(), this, new ChangeNumberItemsListener() {
+        adapter = new CartListAdapter(managementCart.getListCart(), this, new ChangeNumberItemsListener() {
             @Override
             public void changed() {
                 CalculateCart();
